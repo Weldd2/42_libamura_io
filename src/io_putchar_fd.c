@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   io_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antoinemura <antoinemura@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/05 11:50:03 by amura             #+#    #+#             */
-/*   Updated: 2024/12/17 03:32:22 by antoinemura      ###   ########.fr       */
+/*   Created: 2023/11/05 11:47:31 by amura             #+#    #+#             */
+/*   Updated: 2024/12/18 23:57:50 by antoinemura      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "io.h"
 
-void	ft_putstr_fd(char *s, int fd)
+void	io_putchar_fd(char c, int fd)
 {
-	write(fd, s, ft_strlen(s));
+	write(fd, &c, 1);
 }

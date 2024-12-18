@@ -1,0 +1,9 @@
+{
+	"name": "io",
+	"dependencies": [
+		{
+			"name": "str",
+			"repo": "git@github.com:Weldd2/42_libamura_str.git"
+		}
+	]
+}

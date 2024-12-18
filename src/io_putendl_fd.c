@@ -1,36 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   io_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antoinemura <antoinemura@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/05 11:51:24 by amura             #+#    #+#             */
-/*   Updated: 2024/12/17 03:32:22 by antoinemura      ###   ########.fr       */
+/*   Created: 2023/11/05 11:47:31 by amura             #+#    #+#             */
+/*   Updated: 2024/12/18 23:57:47 by antoinemura      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "io.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	io_putendl_fd(char *s, int fd)
 {
-	char	c;
-
-	if (n == -2147483648)
-	{
-		write(fd, "-2147483648", 11);
-		return ;
-	}
-	if (n < 0)
-	{
-		write(fd, "-", 1);
-		n = -n;
-	}
-	if (n > 9)
-	{
-		ft_putnbr_fd(n / 10, fd);
-		n = n % 10;
-	}
-	c = n + '0';
-	write(fd, &c, 1);
+	write(fd, s, str_strlen(s));
+	write(fd, "\n", 1);
 }
